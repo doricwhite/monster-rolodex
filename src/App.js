@@ -2,7 +2,6 @@ import { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 import "./App.css";
-// import { findRenderedDOMComponentWithClass } from "react-dom/test-utils";
 
 class App extends Component {
   constructor() {
@@ -23,10 +22,6 @@ class App extends Component {
           () => {
             return { monsters: users };
           }
-          // ,
-          // () => {
-          //   console.log(this.state);
-          // }
         )
       );
   }
@@ -50,21 +45,14 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Monsters Rolodex</h1>
+
         {/* Search Input */}
         <SearchBox
-          className="search-box"
+          className="monsters-search-box"
           onChangeHandler={onSearchChange}
           placeholder="Search Monsters"
         />
-
-        {/* Display Monster Information */}
-        {/* {filteredMonsters.map((monster) => {
-          return (
-            <div key={monster.id}>
-              <h1>{monster.name}</h1>
-            </div>
-          );
-        })} */}
         <CardList monsters={filteredMonsters} />
       </div>
     );
